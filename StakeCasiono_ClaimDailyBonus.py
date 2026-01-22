@@ -5,7 +5,7 @@ import time
 # ---------------- CONFIG ----------------
 STAKE_URL = "https://stake.us/?tab=dailyBonus&currency=btc&modal=wallet"
 TAB_COUNT = 7
-TAB_WAIT = 1.15
+TAB_WAIT = 1
 PAGE_LOAD_WAIT = 20
 FOCUS_WAIT = 1.15
 DAILY_WAIT = (24 * 60 * 60) + 30
@@ -21,7 +21,7 @@ def countdown(seconds):
     print("\r[INFO] Time to claim the daily bonus!           ")
 
 def move_and_click_button():
-    print("[INFO] Searching for 'Claim Bonus' button...")
+    print("[INFO] Searching for 'Claim Daily Bonus' button...")
     button_location = None
     while button_location is None:
         button_location = pyautogui.locateOnScreen(CLAIM_BUTTON_IMAGE, confidence=0.8)
@@ -32,7 +32,7 @@ def move_and_click_button():
     print(f"[INFO] Moving mouse to button at ({center_x}, {center_y})...")
     pyautogui.moveTo(center_x, center_y, duration=0.8)  # smooth movement
     pyautogui.click()
-    print("[SUCCESS] 'Claim Bonus' clicked ✅")
+    print("[SUCCESS] 'Claim Daily Bonus' clicked ✅")
 
 # ---------------- MAIN LOOP ----------------
 while True:
@@ -49,14 +49,7 @@ while True:
     time.sleep(FOCUS_WAIT)
 
     # ---------------- FIRST TAB NAVIGATION ----------------
-    print(f"[INFO] Pressing TAB {TAB_COUNT} times...")
-    for i in range(TAB_COUNT):
-        pyautogui.press('tab')
-        print(f"[INFO] Tab {i + 1}/{TAB_COUNT}")
-        time.sleep(TAB_WAIT)
-
-    print("[INFO] Pressing Enter...")
-    pyautogui.press('enter')
+    
 
     # ---------------- MOVE MOUSE AND CLICK BUTTON ----------------
     move_and_click_button()
