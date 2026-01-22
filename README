@@ -1,0 +1,151 @@
+# Stake Daily Bonus Auto-Claim Script
+
+⚠️ **DISCLAIMER**
+
+This project is for **educational purposes only**. Automating interactions with online gambling platforms **may violate their Terms of Service** and can result in account restrictions or bans. Use this script **at your own risk**.
+
+---
+
+## 📌 Overview
+
+This Python script automatically opens the Stake daily bonus page and claims the daily bonus using **screen automation**.
+
+It works by:
+
+* Opening the Stake daily bonus URL in your default browser
+* Navigating the page using keyboard input
+* Locating the **"Claim Bonus"** button on screen via image recognition
+* Clicking the button automatically
+* Waiting 24 hours before repeating the process
+
+---
+
+## 🧰 Requirements
+
+### Operating System
+
+* **Windows (recommended)**
+* Linux/macOS with GUI support (not headless)
+
+> ❌ **WSL without GUI will NOT work**
+
+### Software
+
+* Python **3.9+**
+* A graphical desktop environment
+
+### Python Libraries
+
+Install required packages:
+
+```bash
+pip install pyautogui pillow opencv-python
+```
+
+---
+
+## 📂 Project Structure
+
+```
+SnakeCasino_AutoClaim_DailyBonus/
+│
+├── StakeCasiono_ClaimDailyBonus.py   # Main script
+├── button.png                       # Screenshot of the "Claim Bonus" button
+└── README.md
+```
+
+---
+
+## 🖼️ button.png (IMPORTANT)
+
+`button.png` must be:
+
+* A **clear screenshot** of the exact "Claim Bonus" button
+* Taken at **100% display scaling**
+* Matching your browser theme (light/dark)
+
+If the script cannot find the button, retake this screenshot.
+
+---
+
+## ▶️ How to Run
+
+### 1. Open a terminal (Command Prompt / PowerShell)
+
+```powershell
+cd "C:\Users\Owner\OneDrive\Desktop\stuff\Computer_Science_Projects\SnakeCasino_AutoClaim_DailyBonus"
+```
+
+### 2. Run the script
+
+```powershell
+python StakeCasiono_ClaimDailyBonus.py
+```
+
+---
+
+## ⚙️ Configuration
+
+You can tweak these values inside the script:
+
+| Variable             | Description                             |
+| -------------------- | --------------------------------------- |
+| `TAB_COUNT`          | Number of TAB presses before Enter      |
+| `PAGE_LOAD_WAIT`     | Seconds to wait for page load           |
+| `DAILY_WAIT`         | Time between claims (default 24h + 30s) |
+| `CLAIM_BUTTON_IMAGE` | Image used for detection                |
+
+---
+
+## 🧠 How It Works
+
+1. Opens Stake daily bonus URL
+2. Waits for the page to fully load
+3. Focuses the browser window
+4. Uses keyboard navigation (TAB + ENTER)
+5. Searches the screen for `button.png`
+6. Moves the mouse smoothly and clicks
+7. Starts a 24-hour countdown
+
+---
+
+## 🛑 Common Issues
+
+### ❌ Button Not Found
+
+* Retake `button.png`
+* Disable browser zoom
+* Ensure Stake page is visible on screen
+
+### ❌ PyAutoGUI Display Errors
+
+* Run on **Windows Python**, not WSL
+* Ensure a monitor is connected
+
+---
+
+## 🔒 Safety Tips
+
+* Do not move your mouse while script runs
+* Do not minimize the browser
+* Run when the computer will stay unlocked
+* Consider running once per day instead of looping
+
+---
+
+## 🚀 Future Improvements (Optional)
+
+* Selenium-based browser automation
+* Multi-account support
+* Headless-safe logic (non-GUI)
+* Error recovery and logging
+
+---
+
+## 🧾 License
+
+MIT License — use, modify, and learn freely.
+
+---
+
+If you need help improving or converting this to Selenium, feel free to ask.
