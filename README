@@ -90,7 +90,6 @@ You can tweak these values inside the script:
 
 | Variable             | Description                             |
 | -------------------- | --------------------------------------- |
-| `TAB_COUNT`          | Number of TAB presses before Enter      |
 | `PAGE_LOAD_WAIT`     | Seconds to wait for page load           |
 | `DAILY_WAIT`         | Time between claims (default 24h + 30s) |
 | `CLAIM_BUTTON_IMAGE` | Image used for detection                |
@@ -142,10 +141,5 @@ You can tweak these values inside the script:
 
 ---
 
-## 🧾 License
 
-MIT License — use, modify, and learn freely.
 
----
-
-If you need help improving or converting this to Selenium, feel free to ask.
